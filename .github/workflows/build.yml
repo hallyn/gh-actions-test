@@ -1,0 +1,17 @@
+name: build
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Register running
+        run: |
+          echo "Tests are running: $(date)"
+          echo "This is : ${GITHUB_SHA} ${GITHUB_REF}"
